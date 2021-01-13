@@ -15,8 +15,8 @@ from pathlib import Path
 import os, environ
 
 from django.urls import reverse_lazy
-
 env = environ.Env(
+
     # set casting, default value
     DEBUG=(bool, False)
 )
@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bootstrap4',
     'accountapp',
+    'profileapp',
 ]
 
 MIDDLEWARE = [
@@ -145,3 +146,9 @@ STATICFILES_DIRS = [
 
 LOGIN_REDIRECT_URL = reverse_lazy('accountapp:hello_world')
 LOGOUT_REDIRECT_URL = reverse_lazy('accountapp:login')
+
+
+
+STATIC_URL = '/media/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
