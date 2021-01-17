@@ -27,7 +27,7 @@ a {
 
 }
 a:hover{
-    color: black;
+    color: lightgray;
     text-decoration: none;
 }
 

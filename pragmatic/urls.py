@@ -18,8 +18,10 @@ from django.conf.urls.static import static #이미지를 가져오려면conf url
 from django.contrib import admin
 from django.urls import path, include
 
-urlpatterns = [
+from articleapp.views import ArticleListView
 
+urlpatterns = [
+    path('', ArticleListView.as_view(), name='home'),
     path('admin/', admin.site.urls),
     path('accounts/', include('accountapp.urls')),
     path('profiles/', include('profileapp.urls')),

@@ -14,35 +14,35 @@ from django.views.generic.list import MultipleObjectMixin
 
 from accountapp.decorators import account_ownership_required
 from accountapp.forms import AccountUpdateForm
-from accountapp.models import HelloWorld
+
 
 # 배열로 만든다
 from articleapp.models import Article
 
 has_ownership = [account_ownership_required, login_required]
 
-@login_required
-def hello_world(request):
-    # 유저가 접속했는지 알아보는거
-    # if request.user.is_authenticated:
-    if request.method == "POST":
-
-        temp = request.POST.get('hello_world_input')
-
-        new_hello_world = HelloWorld()
-        new_hello_world.text = temp
-        new_hello_world.save()
-
-        # hello_world_list = HelloWorld.objects.all()
-        # 리프레쉬를 해도 돌아가지 않겠금 하는거
-        # 리버스틑 함수용
-        return HttpResponseRedirect(reverse('accountapp:hello_world'))
-    else:
-        hello_world_list = HelloWorld.objects.all()
-        return render(request, 'accountapp/hello_world.html', context={'hello_world_list': hello_world_list})
-    # else:
-    #     # 로그인이 안되어있을때 로그인창으로 리다이렉트리 보내준다
-    #     return HttpResponseRedirect(reverse('accountapp:login'))
+# @login_required
+# def hello_world(request):
+#     # 유저가 접속했는지 알아보는거
+#     # if request.user.is_authenticated:
+#     if request.method == "POST":
+#
+#         temp = request.POST.get('hello_world_input')
+#
+#         new_hello_world = HelloWorld()
+#         new_hello_world.text = temp
+#         new_hello_world.save()
+#
+#         # hello_world_list = HelloWorld.objects.all()
+#         # 리프레쉬를 해도 돌아가지 않겠금 하는거
+#         # 리버스틑 함수용
+#         return HttpResponseRedirect(reverse('accountapp:hello_world'))
+#     else:
+#         hello_world_list = HelloWorld.objects.all()
+#         return render(request, 'accountapp/hello_world.html', context={'hello_world_list': hello_world_list})
+#     # else:
+#     #     # 로그인이 안되어있을때 로그인창으로 리다이렉트리 보내준다
+#     #     return HttpResponseRedirect(reverse('accountapp:login'))
 
 
 class AccountCreateView(CreateView):
