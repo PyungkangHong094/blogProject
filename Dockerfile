@@ -8,9 +8,9 @@ WORKDIR /home/blogProject/
 
 RUN pip install -r requirements.txt
 
-RUN pip install gunicorn
-
 RUN echo "SECRET_KEY=3$!%244a&8y$d*dx!85id8%i8z_*00^ub@czh-*)3q+xa%xf_i" > .env
+
+RUN echo "test1"
 
 RUN python manage.py migrate
 
