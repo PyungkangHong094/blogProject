@@ -12,3 +12,6 @@ class Comment(models.Model):
     content = models.TextField(null=False)
 
     created_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f'{self.pk} : {self.writer},{self.article}'

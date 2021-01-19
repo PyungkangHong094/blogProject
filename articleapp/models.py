@@ -14,3 +14,7 @@ class Article(models.Model):
     content = models.TextField(null=True)
 
     created_at = models.DateField(auto_created=True, null=True)
+
+
+    def __str__(self):
+        return f'{self.pk} : {self.writer},{self.project}'
