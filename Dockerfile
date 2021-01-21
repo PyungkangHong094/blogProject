@@ -2,11 +2,7 @@ FROM python:3.9.0
 
 WORKDIR /home/
 
-RUN echo "test1"
-
-RUN echo "test2"
-
-RUN echo "test3"
+RUN echo "test7"
 
 RUN echo "test6"
 
@@ -16,12 +12,14 @@ WORKDIR /home/blogProject/
 
 RUN pip install -r requirements.txt
 
-RUN echo "SECRET_KEY=3$!%244a&8y$d*dx!85id8%i8z_*00^ub@czh-*)3q+xa%xf_i" > .env
+RUN pip install gunicorn
 
-RUN python manage.py migrate
+RUN pip install mysqlclient
+
+RUN echo "SECRET_KEY=3$!%244a&8y$d*dx!85id8%i8z_*00^ub@czh-*)3q+xa%xf_i" > .env
 
 RUN python manage.py collectstatic
 
 EXPOSE 8000
 
-CMD ["gunicorn", "pragmatic.wsgi", "--bind", "0.0.0.0:8000"]
+CMD ["bash", "-c", "python manage.py migrate --settings=pragmatic.settings.deploy && gunicorn pragmatic.wsgi --env DJANGO_SETTINGS_MODULE=pragmatic.settings.deploy --bind 0.0.0.0:8000"]
