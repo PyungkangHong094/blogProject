@@ -4,7 +4,7 @@ WORKDIR /home/
 
 RUN echo "test7"
 
-RUN echo "test6"
+RUN echo "test9"
 
 RUN git clone https://github.com/PyungkangHong094/blogProject.git
 
