@@ -8,7 +8,7 @@ RUN echo "test2"
 
 RUN echo "test3"
 
-RUN echo "test5"
+RUN echo "test6"
 
 RUN git clone https://github.com/PyungkangHong094/blogProject.git
 
