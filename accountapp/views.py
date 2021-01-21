@@ -49,7 +49,7 @@ class AccountCreateView(CreateView):
     model = User
     form_class = UserCreationForm
     #리버스 레이지는 클래스에서만 사용한다
-    success_url = reverse_lazy('accountapp:hello_world')
+    success_url = reverse_lazy('articleapp:list')
     template_name = 'accountapp/create.html'
 
 class AccountDetailView(DetailView, MultipleObjectMixin):
@@ -81,7 +81,7 @@ class AccountUpdateView(UpdateView):
     model = User
     context_object_name = 'target_user'
     form_class = AccountUpdateForm
-    success_url = reverse_lazy('accountapp:hello_world')
+    success_url = reverse_lazy('articleapp:list')
     template_name = 'accountapp/update.html'
 
 #     클래스 GET을 써주면 행동을 지정해줄수있다
