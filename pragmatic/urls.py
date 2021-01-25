@@ -14,10 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.conf import settings
+from django.conf.urls import url
 from django.conf.urls.static import static #이미지를 가져오려면conf url를 가져와야함
 from django.contrib import admin
 from django.urls import path, include
 
+import articleapp
 from articleapp.views import ArticleListView
 
 urlpatterns = [
@@ -29,5 +31,6 @@ urlpatterns = [
     path('comments/', include('commentapp.urls')),
     path('projects/', include('projectapp.urls')),
     path('subscribe/', include('subscribeapp.urls')),
+    url(r'^info', articleapp.views.info, name='info'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

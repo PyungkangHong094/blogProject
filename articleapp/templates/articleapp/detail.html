@@ -30,7 +30,12 @@
             </a>
             {% endif %}
             <hr>
-
+            <div class="ad_banner">
+                <ins class="kakao_ad_area" style="display:none;"
+                 data-ad-unit    = "DAN-3sJoYahQh66KGeGX"
+                 data-ad-width   = "320"
+                 data-ad-height  = "50"></ins>
+            </div>
             {% for comment in target_article.comment.all %}
                 {% include 'commentapp/detail.html' with comment=comment %}
             {% endfor %}
