@@ -26,16 +26,41 @@
   border-radius: 1rem;
 }
 
+.img_text_only::-webkit-scrollbar {
+  display: none;
+}
+
+.img_text_only {
+    text-align: center;
+    text-align: center;
+    width: 95%;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -65%);
+
+    max-height: 90px;
+    overflow: scroll;
+
+    color: black;
+    font-family: 'Do Hyeon';
+
+
+    position: absolute;
+
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
 
 </style>
     {% if article_list %}
     <div class="container">
-
       {% for article in article_list %}
       <a href="{% url 'articleapp:detail' pk=article.pk %}">
-        {% include 'snippets/card.html' with article=article %}
-      </a>
 
+        {% include 'snippets/card.html' with article=article %}
+          <p class="img_text_only">{{ article_list.title }}</p>
+      </a>
       {% endfor %}
         <div class="item1">
             <ins class="kakao_ad_area" style="display:none;"
