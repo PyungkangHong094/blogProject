@@ -53,14 +53,15 @@
 
 
 </style>
+
     <div class="addthis_inline_share_toolbox_b2qf"></div>
     <br>
     {% if article_list %}
     <div class="container">
       {% for article in article_list %}
-      <a href="{% url 'articleapp:detail' pk=article.pk %}">
+      <a class="effect effect-4" href="{% url 'articleapp:detail' pk=article.pk %}" title="Learn More">
 
-        {% include 'snippets/card.html' with article=article %}
+        {% include 'snippets/card.html' with article=article value="Learn More"%}
           <p class="img_text_only">{{ article_list.title }}</p>
       </a>
       {% endfor %}
@@ -68,7 +69,8 @@
             <ins class="kakao_ad_area" style="display:none;"
              data-ad-unit    = "DAN-7KAPNpdeFRehw0Df"
              data-ad-width   = "250"
-             data-ad-height  = "250"></ins>
+             data-ad-height  = "250">
+            </ins>
         </div>
     </div>
     <script src="{% static 'js/magicgrid.js' %}"></script>
@@ -81,8 +83,8 @@
     {% include 'snippets/pagination.html' with page_obj=page_obj %}
 
     <div style="text-align: center;">
-      <a href="{% url 'articleapp:create' %}" class="btn btn-dark rounded-pill mt-3 mb-3 px-3">
-        Create Article
+      <a href="{% url 'articleapp:create' %}" class="btn btn-outline-dark rounded-pill mt-3 mb-3 px-3">
+        글 작성하기
       </a>
     </div>
 

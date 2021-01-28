@@ -13,7 +13,7 @@ from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
 from django.views.generic.list import MultipleObjectMixin
 
 from accountapp.decorators import account_ownership_required
-from accountapp.forms import AccountUpdateForm
+from accountapp.forms import AccountUpdateForm, AccountCreateForm
 
 
 # 배열로 만든다
@@ -47,7 +47,7 @@ has_ownership = [account_ownership_required, login_required]
 
 class AccountCreateView(CreateView):
     model = User
-    form_class = UserCreationForm
+    form_class = AccountCreateForm
     #리버스 레이지는 클래스에서만 사용한다
     success_url = reverse_lazy('articleapp:list')
     template_name = 'accountapp/create.html'
@@ -115,3 +115,5 @@ class AccountDeleteView(DeleteView):
         else:
             return HttpResponseForbidden()
 
+def edits(request):
+    return render(request, 'accountapp/edits.html')

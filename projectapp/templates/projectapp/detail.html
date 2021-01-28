@@ -12,9 +12,10 @@
                 <!--  프로젝트 타이틀 -->
                 {{ target_project.title }}
             </h2>
-            <h5>
-                {{ target_user.project.description }}
-            </h5>
+            <br>
+            <h6 style="color:rgb(200,200,200)">
+                [{{ target_project.description }}]
+            </h6>
         </div>
 
         <div class="text-center mb-5 ">
@@ -22,12 +23,12 @@
             {% if not subscription %}
             <a href="{% url 'subscribeapp:subscribe' %}?project_pk={{ target_project.pk }}"
                 class="btn btn-primary rounded-pill px-4">
-                Subscribe
+                팔로우
             </a>
             {% else %}
             <a href="{% url 'subscribeapp:subscribe' %}?project_pk={{ target_project.pk }}"
                 class="btn btn-danger rounded-pill px-4">
-                Not Subscribe
+                팔로우 취소
             </a>
             {% endif %}
             {% endif %}

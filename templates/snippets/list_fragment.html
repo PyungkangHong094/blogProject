@@ -31,19 +31,27 @@
 
       </a>
       {% endfor %}
+        <div>
+            <ins class="kakao_ad_area" style="display:none;"
+             data-ad-unit    = "DAN-ZA3Neu2pc79KMobT"
+             data-ad-width   = "300"
+             data-ad-height  = "250"></ins>
+        </div>
     </div>
+
+
     <script src="{% static 'js/magicgrid.js' %}"></script>
     {% else %}
     <div class="text-center">
-      <h1>NO article yet</h1>
+      <h1>No article yet</h1>
     </div>
     {% endif %}
 
     {% include 'snippets/pagination.html' with page_obj=page_obj %}
 
     <div style="text-align: center;">
-      <a href="{% url 'articleapp:create' %}" class="btn btn-dark rounded-pill mt-3 mb-3 px-3">
-        Create Article
+      <a href="{% url 'articleapp:create' %}" class="btn btn-outline-dark rounded-pill mt-3 mb-3 px-3">
+        새로운 글 작성
       </a>
     </div>
 

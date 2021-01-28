@@ -19,6 +19,7 @@ from django.conf.urls.static import static #이미지를 가져오려면conf url
 from django.contrib import admin
 from django.urls import path, include
 
+import accountapp
 import articleapp
 from articleapp.views import ArticleListView
 
@@ -32,5 +33,6 @@ urlpatterns = [
     path('projects/', include('projectapp.urls')),
     path('subscribe/', include('subscribeapp.urls')),
     url(r'^info', articleapp.views.info, name='info'),
+    url(r'^edits', accountapp.views.edits, name='edits'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

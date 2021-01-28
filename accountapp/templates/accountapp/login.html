@@ -5,16 +5,73 @@
 {% block content %}
     <div style="text-align: center; max-width: 500px; margin: 4rem auto">
         <div>
-            <h4>Login</h4>
+            <h3>로그인</h3>
         </div>
         <div>
             <form action="" method="post">
                 {% csrf_token %}
                 {% bootstrap_form form %}
-                <input type="submit" class="btn btn-dark rounded-pill col-6 mt-3">
+
+                <input type="submit" class="btn btn-outline-dark rounded-pill col-6 mt-3">
+
             </form>
+            <br>
+            <div>
+                <a href="{% url 'accountapp:create' %}">
+                <input class="btn btn-outline-success btn-sm  col-4 mt-3" type="submit" value="아이디가 없으신가요?">
+                </a>
+                <a href="{% url 'accountapp:create' %}">
+                <input class="btn btn-outline-success btn-sm  col-3 mt-3" type="submit" value="비밀번호 찾기">
+                </a>
+            </div>
         </div>
     </div>
 
+<!--    <section class="hero is-dark is-fullheight">-->
+<!--      <div class="hero-body">-->
+<!--        <div class="container">-->
+<!--          <div class="columns is-centered">-->
+
+<!--            <div style="text-align: center; max-width: 500px; margin: 4rem auto">-->
+<!--              <form method="POST" action="." class="box">-->
+<!--                {% csrf_token %}-->
+<!--                <h1 class="has-text-centered mb-5 is-size-3">로그인</h1>-->
+
+<!--                <div class="field" style="text-align: center;">-->
+<!--                  <label for="" class="label">아이디</label>-->
+<!--                  <div class="control has-icons-left">-->
+<!--                      <span class="icon is-small is-left">-->
+<!--                        <i class="fa fa-user"></i>-->
+<!--                      </span>-->
+<!--                        {{ form.username }}-->
+
+<!--                  </div>-->
+<!--                </div>-->
+<!--                <br>-->
+<!--                <div class="field">-->
+<!--                  <label for="" class="label">패스워드</label>-->
+<!--                  <div class="control has-icons-left">-->
+<!--                      <span class="icon is-small is-left">-->
+<!--                      <i class="fa fa-lock"></i>-->
+<!--                    </span>-->
+<!--                    {{ form.password }}-->
+
+<!--                  </div>-->
+<!--                </div>-->
+
+<!--                <div class="field">-->
+<!--                  <input class="btn btn-dark rounded-pill col-5 mt-3" type="submit" value="로그인">-->
+<!--                </div>-->
+<!--                  <br>-->
+
+
+
+<!--              </form>-->
+
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </section>-->
 
 {% endblock %}

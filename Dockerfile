@@ -2,7 +2,7 @@ FROM python:3.9.0
 
 WORKDIR /home/
 
-RUN echo "django_image_cube8"
+RUN echo "django_image_cube9"
 
 RUN git clone https://github.com/PyungkangHong094/blogProject.git
 
