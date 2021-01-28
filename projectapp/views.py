@@ -51,13 +51,6 @@ class ProjectDetailView(DetailView, MultipleObjectMixin):
                                                                **kwargs)
 
 
-class ProjectListView(ListView):
-    model = Project
-    context_object_name = 'project_list'
-    template_name = 'projectapp/list.html'
-    paginate_by = 10
-
-
 @method_decorator(project_ownership_required,'get')
 @method_decorator(project_ownership_required,'post')
 class ProjectDeleteView(DeleteView):
@@ -65,4 +58,13 @@ class ProjectDeleteView(DeleteView):
     context_object_name = 'target_project'
     success_url = reverse_lazy('projectapp:list')
     template_name = 'projectapp/delete.html'
+
+
+class ProjectListView(ListView):
+    model = Project
+    context_object_name = 'project_list'
+    template_name = 'projectapp/list.html'
+    paginate_by = 10
+
+
 
