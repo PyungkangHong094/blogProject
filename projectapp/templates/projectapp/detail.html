@@ -18,11 +18,7 @@
             </h6>
         </div>
 
-        {% if target_project.writer == user %}
-        <a href="{% url 'projectapp:delete' pk=target_project.pk %}" class="btn btn-danger rounded-pill col-3">
-            삭제
-        </a>
-        {% endif %}
+
 
         <div class="text-center mb-5 ">
             {% if user.is_authenticated %}
@@ -38,6 +34,15 @@
             </a>
             {% endif %}
             {% endif %}
+
+        </div>
+        <div class="text-center mb-5 ">
+            {% if target_project.writer == user %}
+                <a href="{% url 'projectapp:delete' pk=target_project.pk %}" class="btn btn-danger rounded-pill px-4">
+                    삭제
+                </a>
+            {% endif %}
+
         </div>
 
 
