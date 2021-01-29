@@ -2,6 +2,8 @@ from django.contrib.auth.models import User
 from django.db import models
 
 # Create your models here.
+from django.utils import timezone
+
 from projectapp.models import Project
 
 
@@ -14,6 +16,7 @@ class Article(models.Model):
     content = models.TextField(null=True)
 
     created_at = models.DateField(auto_now_add=True, null=True)
+    timestamp = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return f'{self.pk} : {self.writer},{self.project}'
