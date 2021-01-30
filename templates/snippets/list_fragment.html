@@ -42,13 +42,16 @@
 
     <script src="{% static 'js/magicgrid.js' %}"></script>
     {% else %}
+    <br>
     <div class="text-center">
-      <h1>No article yet</h1>
+        <h1> Article이 없습니다</h1>
+        <h2>새로운 사진과 글을 작성해주세요</h2>
+
     </div>
+    <br>
     {% endif %}
 
     {% include 'snippets/pagination.html' with page_obj=page_obj %}
-
     <div style="text-align: center;">
       <a href="{% url 'articleapp:create' %}" class="btn btn-outline-dark rounded-pill mt-3 mb-3 px-3">
         새로운 글 작성

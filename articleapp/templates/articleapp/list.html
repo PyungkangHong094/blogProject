@@ -9,10 +9,12 @@
 .container {
     padding: 0;
     margin: 0, auto;
+
 }
 .container a {
     width: 45%;
     max-width: 250px
+
 }
 
 .container div {
@@ -24,6 +26,7 @@
 .container img{
   width:100%;
   border-radius: 1rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .img_text_only::-webkit-scrollbar {
@@ -59,13 +62,14 @@
     {% if article_list %}
     <div class="container">
       {% for article in article_list %}
-      <a class="effect effect-4" href="{% url 'articleapp:detail' pk=article.pk %}" title="Learn More">
+      <a class="effect effect-4" href="{% url 'articleapp:detail' pk=article.pk %}"
+         title="Learn More" >
 
         {% include 'snippets/card.html' with article=article value="Learn More"%}
           <p class="img_text_only">{{ article_list.title }}</p>
       </a>
       {% endfor %}
-        <div class="item1">
+        <div class="effect effect-4">
             <ins class="kakao_ad_area" style="display:none;"
              data-ad-unit    = "DAN-7KAPNpdeFRehw0Df"
              data-ad-width   = "250"
@@ -75,8 +79,9 @@
     </div>
     <script src="{% static 'js/magicgrid.js' %}"></script>
     {% else %}
+
     <div class="text-center">
-      <h1>NO article yet</h1>
+      <h1>아티클이 없습니다 추가해주세요!</h1>
     </div>
     {% endif %}
 

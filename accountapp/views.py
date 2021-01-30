@@ -60,7 +60,9 @@ class AccountDetailView(DetailView, MultipleObjectMixin):
     paginate_by = 10
 
     def get_context_data(self, **kwargs):
+        objects = ['-id']
         object_list = Article.objects.all().filter(writer=self.get_object())
+
         return super(AccountDetailView, self).get_context_data(object_list=object_list, **kwargs)
 
 

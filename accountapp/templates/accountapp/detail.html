@@ -16,7 +16,7 @@
                 {{ target_user.profile.nickname }}
                 {% if target_user == user %}
                 <a class="material-icons"
-                   style="box-shadow: 0 0 4px #ccc; border-radius: 10rem; padding: .4rem"
+                   style="box-shadow: 0 0 4px #6c6061; border-radius: 10rem; padding: .4rem"
                    href="{% url 'profileapp:update' pk=target_user.profile.pk %}">
                     settings
                 </a>
@@ -28,9 +28,17 @@
 
             {% else %}
             {% if target_user == user %}
+            <div>
+                <p>Click! 프로필을 바꿔주세요!</p>
+            </div>
+
+
             <a class="material-icons"
-               style="box-shadow: 0 0 4px #fc4f63; border-radius: 10rem; padding: .4rem"
+               style="box-shadow: 0 0 4px #6c6061; border-radius: 10rem; padding: .4rem"
                href="{% url 'profileapp:create' %}">
+                <div class="material-icons">
+                east
+            </div>
                 perm_identity
             </a>
             {% else %}
@@ -40,13 +48,14 @@
 
 
             {% if target_user == user %}
+
             <a class="material-icons"
-               style="box-shadow: 0 0 4px #ccc; border-radius: 10rem; padding: .4rem"
+               style="box-shadow: 0 0 4px #6c6061; border-radius: 10rem; padding: .4rem"
                href="{% url 'accountapp:update' pk=user.pk %}">
                 lock
             </a>
             <a class="material-icons"
-               style="box-shadow: 0 0 4px #fc4f63; border-radius: 10rem; padding: .4rem"
+               style="box-shadow: 0 0 4px #e0001a; border-radius: 10rem; padding: .4rem"
                href="{% url 'accountapp:delete' pk=user.pk %}">
                 warning
             </a>
