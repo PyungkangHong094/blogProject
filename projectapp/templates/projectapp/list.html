@@ -3,14 +3,11 @@
 {% load static %}
 
 {% block content %}
-
 <style>
-
     .container {
         padding: 0;
         margin: 0, auto;
     }
-
     .container div {
       display: flex;
       justify-content: center;
@@ -24,8 +21,8 @@
       border-radius: 1rem;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
-
 </style>
+
     {% if project_list %}
     <div class="container">
       {% for project in project_list %}
@@ -48,6 +45,5 @@
         새로운 프로젝트 개설
       </a>
     </div>
-
 
 {% endblock %}

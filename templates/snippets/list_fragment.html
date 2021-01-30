@@ -44,7 +44,9 @@
     {% else %}
     <br>
     <div class="text-center">
-        <h1> Article이 없습니다</h1>
+        {% if article_list %}
+            <h1> Article이 없습니다</h1>
+        {% endif %}
         <h2>새로운 사진과 글을 작성해주세요</h2>
 
     </div>
