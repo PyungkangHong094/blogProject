@@ -35,10 +35,11 @@ class SubscriptionListView(ListView):
     model = Article
     context_object_name = 'article_list'
     template_name = 'subscribeapp/list.html'
+    ordering = ['-id']
     paginate_by = 5
 
     #qury set
     def get_queryset(self):
         projects = Subscription.objects.filter(user=self.request.user).values_list('project')
-        article_list = Article.objects.filter(project__in=projects)
+        article_list = Article.objects.filter(project__in=projects).order_by('-created_at')
         return article_list

@@ -23,6 +23,9 @@ import accountapp
 import articleapp
 from articleapp.views import ArticleListView
 
+from accountapp.forms import ResetPasswordForm, NewPasswordForm
+
+
 urlpatterns = [
     path('', ArticleListView.as_view(), name='home'),
     path('admin/', admin.site.urls),
@@ -34,5 +37,7 @@ urlpatterns = [
     path('subscribe/', include('subscribeapp.urls')),
     url(r'^info', articleapp.views.info, name='info'),
     url(r'^edits', accountapp.views.edits, name='edits'),
+
+
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
