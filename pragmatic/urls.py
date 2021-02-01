@@ -24,7 +24,7 @@ import articleapp
 from articleapp.views import ArticleListView
 
 from django.contrib.auth import views as auth_views
-from accountapp.forms import ResetPasswordForm, NewPasswordForm
+# from accountapp.forms import ResetPasswordForm, NewPasswordForm
 
 
 urlpatterns = [
@@ -38,6 +38,9 @@ urlpatterns = [
     path('subscribe/', include('subscribeapp.urls')),
     url(r'^info', articleapp.views.info, name='info'),
     url(r'^edits', accountapp.views.edits, name='edits'),
+    url(r'^announce', accountapp.views.announce, name='announce'),
+
+    url('^', include('django.contrib.auth.urls')),
 
     path('password_reset/', auth_views.PasswordResetView.as_view(), name='password_reset'),
     path('password_reset/done/', auth_views.PasswordResetDoneView.as_view(), name='password_reset_done'),

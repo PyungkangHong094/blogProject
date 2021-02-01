@@ -124,13 +124,15 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-
-EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_HOST_USER = 'apikey' #keep this as it is
-EMAIL_HOST_PASSWORD = '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'
+# Email 전송
+# 메일을 호스트하는 서버
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'cubelink.dev@gmail.com' #keep this as it is
+EMAIL_HOST_PASSWORD = 'cubelink2021'
+# gmail과의 통신하는 포트
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-DEFAULT_FROM_EMAIL = 'pyungkang1004@local.host' # wrong ?
+DEFAULT_FROM_EMAIL = 'pyungkang1004@gmail.com' # wrong ?
 
 

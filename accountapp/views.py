@@ -57,7 +57,7 @@ class AccountDetailView(DetailView, MultipleObjectMixin):
     context_object_name = 'target_user'
     template_name = 'accountapp/detail.html'
 
-    paginate_by = 10
+    paginate_by = 30
 
     def get_context_data(self, **kwargs):
         object_list = Article.objects.filter(writer=self.get_object()).order_by('-created_at')
@@ -117,3 +117,9 @@ class AccountDeleteView(DeleteView):
 
 def edits(request):
     return render(request, 'accountapp/edits.html')
+
+
+def announce(request):
+    return render(request, 'accountapp/announce.html')
+
+
