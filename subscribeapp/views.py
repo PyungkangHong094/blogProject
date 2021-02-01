@@ -35,7 +35,6 @@ class SubscriptionListView(ListView):
     model = Article
     context_object_name = 'article_list'
     template_name = 'subscribeapp/list.html'
-    ordering = ['-id']
     paginate_by = 5
 
     #qury set

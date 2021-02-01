@@ -1,4 +1,4 @@
-{% extends 'base.html' %}g
+{% extends 'base.html' %}
 {% load bootstrap4 %}
 
 
@@ -9,7 +9,7 @@
             <h1>
                 {{ target_article.title }}
             </h1>
-
+            <h6 style="color:lightgray"> {{ target_article.created_at }} </h6>
             <div style="text-align: center; box-shadow: #d4d4d4 0px 0px 9px; border-radius: 10rem;
             display: inline-block;">
 
@@ -22,7 +22,7 @@
 <!--                        style="display: inline-block;    width: 2rem; height: 2rem; object-fit: cover;-->
 <!--                        border-radius: 10rem; box-shadow: #cccccc 0px 0px 5px;-->
 <!--                        margin: .3rem -0.3rem .3rem .3rem" >-->
-                    작성자: {{ target_article.writer.profile.nickname }}
+                    작성자: {{ target_article.writer.profile.nickname }} 
 
                     </a>
                 </h4>
