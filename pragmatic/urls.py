@@ -39,6 +39,7 @@ urlpatterns = [
     url(r'^info', articleapp.views.info, name='info'),
     url(r'^edits', accountapp.views.edits, name='edits'),
     url(r'^announce', accountapp.views.announce, name='announce'),
+    url(r'^homepage', articleapp.views.homepage, name='homepage'),
 
     url('^', include('django.contrib.auth.urls')),
 

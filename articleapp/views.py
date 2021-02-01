@@ -74,3 +74,6 @@ class ArticleListView(ListView):
 
 def info(request):
     return render(request, 'articleapp/info.html')
+
+def homepage(request):
+    return render(request, 'articleapp/homepage.html')
