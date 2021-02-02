@@ -9,25 +9,34 @@
             <h1>
                 {{ target_article.title }}
             </h1>
-            <h6 style="color:lightgray"> {{ target_article.created_at }} | {{ target_article.project }}</h6>
+            <h6 style="color:lightgray"> {{ target_article.created_at }} </h6>
             <div style="text-align: center; box-shadow: #d4d4d4 0px 0px 9px; border-radius: 10rem;
             display: inline-block;">
 
                 <h4 style="text-align: center; vertical-align: middle; display: inline-block;
-            font-family: 'NanumSquareB', sans-serif; font-size: 1.1rem;
-             margin: 0.5rem 0.6rem 0.3rem 0.6rem;">
+                font-family: 'NanumSquareB', sans-serif; font-size: 1.1rem;
+                margin: 0.5rem 0.6rem 0.3rem 0.6rem;">
 
                     <a href="{% url 'accountapp:detail' pk=target_article.writer.pk %}">
 <!--                        <img src="{{ target_user.profile.image.url }}" alt=""-->
 <!--                        style="display: inline-block;    width: 2rem; height: 2rem; object-fit: cover;-->
 <!--                        border-radius: 10rem; box-shadow: #cccccc 0px 0px 5px;-->
 <!--                        margin: .3rem -0.3rem .3rem .3rem" >-->
-                    작성자: {{ target_article.writer.profile.nickname }} 
+                    작성자: {{ target_article.writer.profile.nickname }}
 
                     </a>
                 </h4>
 
+                <h4 style="text-align: center; vertical-align: middle; display: inline-block;
+                font-family: 'NanumSquareB', sans-serif; font-size: 1.1rem;
+                margin: 0.5rem 0.6rem 0.3rem 0.6rem;">
+
+                    <a href="{% url 'projectapp:detail' pk=target_article.project.pk %}">
+                    {{ target_article.project }}
+                    </a>
+                </h4>
             </div>
+
             <hr>
             <img style="width: 100%; border-radius: 1rem; margin: 2rem 0;"
                     src="{{ target_article.image.url }}" alt="">
