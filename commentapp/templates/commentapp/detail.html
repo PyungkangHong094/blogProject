@@ -4,7 +4,9 @@
             {{ comment.writer.profile.nickname }}
         </Strong>
         &nbsp&nbsp&nbsp
-        {{ comment.create_at }}
+        <h7 style="float:right">
+        {{ comment.created_at }}
+        </h7>
     </div>
     <div style="margin: 1rem 0">
         {{ comment.content }}
