@@ -26,16 +26,20 @@
 
                     </a>
                 </h4>
-
+            </div>
+            {% if target_article.project %}
+            <div style="text-align: center; box-shadow: #d4d4d4 0px 0px 9px; border-radius: 10rem;
+                display: inline-block;">
                 <h4 style="text-align: center; vertical-align: middle; display: inline-block;
-                font-family: 'NanumSquareB', sans-serif; font-size: 1.1rem;
-                margin: 0.5rem 0.6rem 0.3rem 0.6rem;">
+                    font-family: 'NanumSquareB', sans-serif; font-size: 1.1rem;
+                    margin: 0.5rem 0.6rem 0.3rem 0.6rem;">
 
-                    <a href="{% url 'projectapp:detail' pk=target_article.project.pk %}">
-                    {{ target_article.project }}
-                    </a>
+                        <a href="{% url 'projectapp:detail' pk=target_article.project.pk %}">
+                        {{ target_article.project }}
+                        </a>
                 </h4>
             </div>
+            {% endif %}
 
             <hr>
             <img style="width: 100%; border-radius: 1rem; margin: 2rem 0;"
