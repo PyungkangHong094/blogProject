@@ -4,7 +4,7 @@ from django.shortcuts import render
 # Create your views here.
 from django.urls import reverse, reverse_lazy
 from django.utils.decorators import method_decorator
-from django.views.generic import CreateView, DetailView, ListView, DeleteView
+from django.views.generic import CreateView, DetailView, ListView, DeleteView, UpdateView
 from django.views.generic.list import MultipleObjectMixin
 
 from articleapp.models import Article
@@ -66,5 +66,13 @@ class ProjectListView(ListView):
     template_name = 'projectapp/list.html'
     paginate_by = 50
 
+@method_decorator(project_ownership_required,'get')
+@method_decorator(project_ownership_required,'post')
+class ProjectUpdateView(UpdateView):
+    model = Project
+    context_object_name = 'target_project'
+    form_class = ProjectCreationForm
+    template_name = 'projectapp/update.html'
 
-
+    def get_success_url(self):
+        return reverse('projectapp:detail', kwargs={'pk': self.object.pk})

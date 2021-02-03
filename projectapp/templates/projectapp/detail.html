@@ -38,9 +38,12 @@
         </div>
         <div class="text-center mb-5 ">
             {% if target_project.writer == user %}
-                <a href="{% url 'projectapp:delete' pk=target_project.pk %}" class="btn btn-danger rounded-pill px-4">
-                    삭제
-                </a>
+            <a href="{% url 'projectapp:update' pk=target_project.pk %}" class="btn btn-success rounded-pill px-4">
+                수정
+            </a>
+            <a href="{% url 'projectapp:delete' pk=target_project.pk %}" class="btn btn-danger rounded-pill px-4">
+                삭제
+            </a>
             {% endif %}
 
         </div>
