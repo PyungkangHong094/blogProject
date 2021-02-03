@@ -18,4 +18,4 @@ class Article(models.Model):
 
 
     def __str__(self):
-        return f'{self.pk} : {self.writer},{self.project}'
+        return f'{self.writer},{self.project}'
