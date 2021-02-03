@@ -62,6 +62,7 @@
     {% if article_list %}
     <div class="container">
       {% for article in article_list %}
+
       <a class="effect effect-4" href="{% url 'articleapp:detail' pk=article.pk %}"
          title="Learn More" >
 
