@@ -19,7 +19,7 @@ from django.utils import timezone, dateformat
 class ArticleCreateView(CreateView):
     model = Article
     form_class = ArticleCreationForm
-    ordering = ['-id']
+
     template_name = 'articleapp/create.html'
 
     def form_valid(self, form):
@@ -68,7 +68,7 @@ class ArticleListView(ListView):
     model = Article
     context_object_name = 'article_list'
     template_name = 'articleapp/list.html'
-    ordering = ['-id']
+    ordering = ['-pk']
     paginate_by = 22
 
 
