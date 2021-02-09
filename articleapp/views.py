@@ -41,6 +41,26 @@ class ArticleDetailView(DetailView, FormMixin):
     template_name = 'articleapp/detail.html'
 
 
+
+    # def get_context_data(self, **kwargs):
+    #     context = super(ArticleDetailView, self).get_context_data(**kwargs)
+    #     slug = self.kwargs['pk']
+    #
+    #     post = Article.objects.get(pk=slug)
+    #
+    #     next_page = Article.objects.filter(pk__gt=post.pk).exists()
+    #     pre_page = Article.objects.filter(pk__lt=post.pk).exists()
+    #
+    #     if next_page:
+    #         context['has_next_page'] = True
+    #         context['next_page'] = Article.objects.filter(
+    #             pk__gt=post.pk).first()
+    #
+    #     if pre_page:
+    #         context['has_pre_page'] = True
+    #         context['pre_page'] = Article.objects.filter(
+    #             pk__lt=post.pk).order_by('-pk').first()
+
 @method_decorator(article_ownership_required,'get')
 @method_decorator(article_ownership_required,'post')
 class ArticleUpdateView(UpdateView):
@@ -69,7 +89,7 @@ class ArticleListView(ListView):
     context_object_name = 'article_list'
     template_name = 'articleapp/list.html'
     ordering = ['-pk']
-    paginate_by = 22
+    paginate_by = 40
 
 
 

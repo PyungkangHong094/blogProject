@@ -10,6 +10,7 @@ from projectapp.models import Project
 class Article(models.Model):
     writer = models.ForeignKey(User, on_delete=models.SET_NULL, related_name='article', null=True)
     project = models.ForeignKey(Project, on_delete=models.SET_NULL, related_name='article', null=True)
+    slug = models.SlugField(unique=True, allow_unicode=True, null=True, blank=True)
     title = models.CharField(max_length=200, null=True)
     image = models.ImageField(upload_to='article/', null=False, default='')
     content = models.TextField(null=True)

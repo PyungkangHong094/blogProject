@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'commentapp',
     'projectapp',
     'subscribeapp',
+    'chatbotapp',
 ]
 
 MIDDLEWARE = [
@@ -124,15 +125,14 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+
 # Email 전송
 # 메일을 호스트하는 서버
+EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'cubelink.dev@gmail.com' #keep this as it is
-EMAIL_HOST_PASSWORD = 'cubelink2021'
 # gmail과의 통신하는 포트
 EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-DEFAULT_FROM_EMAIL = 'pyungkang1004@gmail.com' # wrong ?
-
-
+EMAIL_HOST_USER = 'cubelink.dev@gmail.com'
+EMAIL_HOST_PASSWORD = 'cubelink2021'
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# DEFAULT_FROM_EMAIL = 'pyungkang1004@gmail.com' # wrong ?

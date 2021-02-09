@@ -21,6 +21,7 @@ from django.urls import path, include
 
 import accountapp
 import articleapp
+import chatbotapp
 from articleapp.views import ArticleListView
 
 from django.contrib.auth import views as auth_views
@@ -36,8 +37,10 @@ urlpatterns = [
     path('comments/', include('commentapp.urls')),
     path('projects/', include('projectapp.urls')),
     path('subscribe/', include('subscribeapp.urls')),
+    path('chatbotapp/', include('chatbotapp.urls')),
     url(r'^info', articleapp.views.info, name='info'),
     url(r'^edits', accountapp.views.edits, name='edits'),
+    url(r'^chathome', chatbotapp.views.chathome, name='chathome'),
     url(r'^announce', accountapp.views.announce, name='announce'),
     url(r'^homepage', articleapp.views.homepage, name='homepage'),
 
