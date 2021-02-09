@@ -34,6 +34,7 @@ a:hover{
 
 .pragmatic_header_nav{
     margin: 1rem 0.5rem;
+    font-family: 'Lexend Mega', sans-serif;
 }
 .pragmatic_header_navbar{
     margin: 1rem 0;
@@ -99,4 +100,11 @@ button:focus {
 .rck {
     margin-top: 20px;
     padding-bottom: 15px
+}
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
