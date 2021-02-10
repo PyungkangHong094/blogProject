@@ -27,6 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.sites',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -39,7 +40,18 @@ INSTALLED_APPS = [
     'projectapp',
     'subscribeapp',
     'chatbotapp',
+
+    # Required apps for allauth:
+
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.naver',
+
+    'allauth.socialaccount.providers.google',
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -68,6 +80,12 @@ TEMPLATES = [
         },
     },
 ]
+
+AUTHENTICATION_BACKENDS =(
+    "django.contrib.auth.backends.ModelBackend",
+    "allauth.account.auth_backends.AuthenticationBackend",
+)
+
 
 WSGI_APPLICATION = 'pragmatic.wsgi.application'
 
@@ -117,7 +135,7 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
-LOGIN_REDIRECT_URL = reverse_lazy('home')
+LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = reverse_lazy('home')
 
 
@@ -136,3 +154,6 @@ EMAIL_HOST_USER = 'cubelink.dev@gmail.com'
 EMAIL_HOST_PASSWORD = 'cubelink2021'
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # DEFAULT_FROM_EMAIL = 'pyungkang1004@gmail.com' # wrong ?
+
+
+#로그인5회 이상 틀리면 방지문자

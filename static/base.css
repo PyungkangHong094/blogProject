@@ -11,8 +11,7 @@
 }
 .pragmatic_header{
     text-align:center;
-    margin: 2rem 0;
-
+    margin: 0.5rem 0;
 }
 
 @media screen and (max-width:500px) {

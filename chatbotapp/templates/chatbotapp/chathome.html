@@ -39,9 +39,9 @@
         }
 
         addText = "<div style='margin:14px 0; text-align:right'>
-                <span style ='box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); padding: 5px 8px; border-radius: 1rem;'>"+ chatTest + "
-                </span>
-            </div>"
+                    <span style ='box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); padding: 5px 8px; border-radius: 1rem;'>"+ chatTest + "
+                    </span>
+                </div>"
         document.getElementById("chatbox").innerHTML += addText;
 
         botText = "<div style='margin:14px 0; text-align:left'><span style ='box-shadow: 0 4px 8px 0 rgba(169, 74, 217, 1), 0 6px 20px 0 rgba(0, 0, 0, 0.19); padding: 5px 8px; border-radius: 1rem;'>I am bot</span></div>"
@@ -49,6 +49,7 @@
     }
 </script>
 {% endblock %}
+
 
 <div class="container">
     <div class="container">
@@ -69,7 +70,7 @@
                     <input type="text" id="chattext" style="padding:12px; width:100%; border: 2px solid gray;border-radius: 25px ">
                 </td>
                 <td width="15%" align="right">
-                    <button  type="button" class="btn btn-outline-success rounded-pill mt-3 mb-3 px-3" style="padding:12px;" onclick="sendAsk()">보내기</button>
+                    <button  type="button" class="btn btn-outline-success rounded-pill mt-3 mb-3 px-3" style="padding:12px;" onclick="sendAsk()">확인</button>
                 </td>
             </tr>
         </table>

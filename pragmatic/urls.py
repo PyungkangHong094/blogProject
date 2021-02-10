@@ -44,11 +44,12 @@ urlpatterns = [
     url(r'^announce', accountapp.views.announce, name='announce'),
     url(r'^homepage', articleapp.views.homepage, name='homepage'),
 
-    url('^', include('django.contrib.auth.urls')),
-
     path('password_reset/', auth_views.PasswordResetView.as_view(), name='password_reset'),
     path('password_reset/done/', auth_views.PasswordResetDoneView.as_view(), name='password_reset_done'),
     path('password_reset/confirm/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(),name='password_reset_confirm'),
     path('password_reset/complete/', auth_views.PasswordResetCompleteView.as_view(),name='password_reset_complete'),
+
+    path("accounts/", include("allauth.urls")),
+
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
