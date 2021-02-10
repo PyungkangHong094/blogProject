@@ -1,40 +1,53 @@
 
 
     <div class="pragmatic_header">
-        <div>
-            <a class="cubelink_title" href="/">
-                <h1 class="pragmatic_logo">CubeL:nk</h1>
-            </a>
-        </div>
-        <div class="pragmatic_header_navbar">
+        <h1 class="pragmatic_logo">
+            <a class="cubelink_title" href="/">CubeL:nk</a>
+        </h1>
 
-            <a href="{% url 'articleapp:list' %}" class="pragmatic_header_nav">
-                <span>Articles</span>
-            </a>
+        <nav class="pragmatic_header_navbar">
+            <ul>
+                <li>
+                    <a href="{% url 'articleapp:list' %}" class="pragmatic_header_nav">
+                        메인
+                    </a>
 
-            <a href="{% url 'projectapp:list' %}" class="pragmatic_header_nav">
-                <span>Project</span>
-            </a>
+                <li> |
+                    <a href="{% url 'projectapp:list' %}" class="pragmatic_header_nav">
+                        큐브링크
+                    </a>
+                </li> |
 
-            {% if not user.is_authenticated %}
-            <a href="{% url 'accountapp:login' %}?next={{ request.path }}" class="pragmatic_header_nav">
-                <span>Login</span>
-            </a>
-            <a href="{% url 'accountapp:create' %}" class="pragmatic_header_nav">
-                <span>SingUp</span>
-            </a>
-            {% else %}
-            <a href="{% url 'subscribeapp:list' %}" class="pragmatic_header_nav">
-                <span>Subscription</span>
-            </a>
-            <a href="{% url 'accountapp:detail' pk=user.pk %}" class="pragmatic_header_nav">
-                <span>Mypage</span>
-            </a>
-            <a href="{% url 'accountapp:logout' %}?next={{ request.path }}" class="pragmatic_header_nav">
-                <span>Logout</span>
-            </a>
-            {% endif %}
-        </div>
+                {% if not user.is_authenticated %}
+                <li>
+                    <a href="{% url 'accountapp:login' %}?next={{ request.path }}" class="pragmatic_header_nav">
+                        로그인
+                    </a>
+                </li> |
+                <li>
+                    <a href="{% url 'accountapp:create' %}" class="pragmatic_header_nav">
+                        회원가입
+                    </a>
+                </li> |
+                {% else %}
+                <li>
+                    <a href="{% url 'subscribeapp:list' %}" class="pragmatic_header_nav">
+                        구독
+                    </a>
+                </li> |
+                <li>
+                    <a href="{% url 'accountapp:detail' pk=user.pk %}" class="pragmatic_header_nav">
+                        마이프로필
+                    </a>
+                </li> |
+                <li>
+                    <a href="{% url 'accountapp:logout' %}?next={{ request.path }}" class="pragmatic_header_nav">
+                        로그아웃
+                    </a>
+                </li> |
+                {% endif %}
+            </ul>
+        </nav>
 
 
 
