@@ -20,6 +20,7 @@ from django.urls import reverse_lazy
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
+ALLOWED_HOSTS = ['158.247.223.218', '127.0.0.1', '.cubelink.ga']
 
 
 # Application definition
@@ -80,6 +81,8 @@ TEMPLATES = [
         },
     },
 ]
+NAVER_CLIENT_ID = 'qJXZyvWKxnrCVrPtLdEf'
+NAVER_SECRET_KEY = 'TQV5pyfxdr'
 
 AUTHENTICATION_BACKENDS =(
     "django.contrib.auth.backends.ModelBackend",
