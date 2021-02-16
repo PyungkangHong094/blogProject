@@ -1,41 +1,55 @@
+{% load static %}
+    <nav class="pragmatic_header_navbar">
 
-    <div class="pragmatic_header">
-        <div>
-            <a class="cubelink_title" href="/">
-                <h1 class="pragmatic_logo">CubeL:nk</h1>
+        <div class="pragmatic_logo">
+            <a href="/"><i class="material-icons">widgets</i>
+                CubeL:nk
             </a>
         </div>
-        <div class="pragmatic_header_navbar">
 
-            <a href="{% url 'articleapp:list' %}" class="pragmatic_header_nav">
-                <span>Articles</span>
-            </a>
-            
-            <a href="{% url 'projectapp:list' %}" class="pragmatic_header_nav">
-                <span>Project</span>
-            </a>
-
-
-
+        <ul class="navbar_menu">
+            <li><a href="{% url 'articleapp:list' %}" class="pragmatic_header_nav">메인</a></li>
+            <li><a href="{% url 'projectapp:list' %}" class="pragmatic_header_nav">큐브링크</a></li>
             {% if not user.is_authenticated %}
-            <a href="{% url 'accountapp:login' %}?next={{ request.path }}" class="pragmatic_header_nav">
-                <span>Login</span>
-            </a>
-            <a href="{% url 'accountapp:create' %}" class="pragmatic_header_nav">
-                <span>SingUp</span>
-            </a>
+            <li>
+                <a href="{% url 'accountapp:login' %}?next={{ request.path }}" class="pragmatic_header_nav">
+                    로그인
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'accountapp:create' %}" class="pragmatic_header_nav">
+                    회원가입
+                </a>
+            </li>
             {% else %}
-            <a href="{% url 'subscribeapp:list' %}" class="pragmatic_header_nav">
-                <span>Subscription</span>
-            </a>
-            <a href="{% url 'accountapp:detail' pk=user.pk %}" class="pragmatic_header_nav">
-                <span>Mypage</span>
-            </a>
-            <a href="{% url 'accountapp:logout' %}?next={{ request.path }}" class="pragmatic_header_nav">
-                <span>Logout</span>
-            </a>
+            <li>
+                <a href="{% url 'subscribeapp:list' %}" class="pragmatic_header_nav">
+                    구독
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'accountapp:detail' pk=user.pk %}" class="pragmatic_header_nav">
+                    마이프로필
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'accountapp:logout' %}?next={{ request.path }}" class="pragmatic_header_nav">
+                    로그아웃
+                </a>
+            </li>
             {% endif %}
+        </ul>
+        <ul class="navbar_icon">
+            <li style="padding: 8px 12px; list-style: none;"><div class="addthis_inline_share_toolbox_b2qf"></div></li>
+        </ul>
+        <script src="{% static 'js/main.js' %}" defer></script>
+        <a href="#" class="navbar_toogleBtn">
+            <i class="material-icons">menu_open</i>
+        </a>
+    </nav>
 
-        </div>
 
-    </div>
+
+
+
+

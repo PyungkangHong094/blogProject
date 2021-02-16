@@ -1,37 +1,43 @@
 {% extends 'base.html' %}
 {% load bootstrap4 %}
-
+{% load socialaccount %}
+{% providers_media_js %}
 
 {% block content %}
-    <div style="text-align: center; max-width: 500px; margin: 4rem auto">
+    <div class="container col-md-6 text-center" style=" text-align: center!important ;max-width: 500px; margin: 4rem auto">
         <div>
             <h3>로그인</h3>
         </div>
-        <div>
-            <form action="" method="post">
-                {% csrf_token %}
-                {% bootstrap_form form %}
 
-                <input type="submit" class="btn btn-outline-dark rounded-pill col-6 mt-3">
-
-            </form>
-            <br>
-            <div>
-                <a href="{% url 'accountapp:create' %}">
-                <input class="btn btn-outline-success btn-sm  col-4 mt-3" type="submit" value="아이디가 없으신가요?">
-                </a>
-                <a href="{% url 'password_reset' %}">
-                <input class="btn btn-outline-success btn-sm  col-3 mt-3" type="submit" value="비밀번호 찾기">
-                </a>
+        <form class="form_class_max_600px" action="" method="post">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <div class="text-right" style="text-right: text-align: right!important">
+                <a href="{% url 'accountapp:create' %}" class="btn btn-outline-success btn-sm  col-3.5 mt-3" type="submit" style="font-size:.8rem">아이디가 없으신가요?</a>
+                <a href="{% url 'password_reset' %}" class="btn btn-outline-success btn-sm  col-3 mt-3" type="submit" style="font-size:.8rem">비밀번호 찾기</a>
             </div>
+            <input type="submit" class="btn btn-outline-dark rounded-pill col-4 mt-3" value="로그인">
+
+        </form>
+        <br>
+        <div class="text-center">
+            <a href="{% provider_login_url 'google' %}" style="color:#FFFFFF">
+                <div class="form_class_max_600px" style="width: auto; border-radius: 12px; background-color: #FE2E2E; height: auto; margin-top: 0.5rem;" >
+                구글 로그인</div>
+            </a>
+            <a href="{% provider_login_url 'naver' %}" style="color:#FFFFFF">
+                <div class="form_class_max_600px" style="width: auto; border-radius: 12px; background-color: #1EC800; height: auto; margin-top: 1rem;">
+                네이버 로그인</div>
+            </a>
         </div>
+        <br>
+
     </div>
 
-<!--    <section class="hero is-dark is-fullheight">-->
+<!--    <siji iosidjfisection class="hero is-dark is-fullheight">-->
 <!--      <div class="hero-body">-->
 <!--        <div class="container">-->
 <!--          <div class="columns is-centered">-->
-
 <!--            <div style="text-align: center; max-width: 500px; margin: 4rem auto">-->
 <!--              <form method="POST" action="." class="box">-->
 <!--                {% csrf_token %}-->

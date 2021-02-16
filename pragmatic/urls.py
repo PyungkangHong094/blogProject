@@ -21,6 +21,7 @@ from django.urls import path, include
 
 import accountapp
 import articleapp
+import chatbotapp
 from articleapp.views import ArticleListView
 
 from django.contrib.auth import views as auth_views
@@ -36,16 +37,19 @@ urlpatterns = [
     path('comments/', include('commentapp.urls')),
     path('projects/', include('projectapp.urls')),
     path('subscribe/', include('subscribeapp.urls')),
+    path('chatbotapp/', include('chatbotapp.urls')),
     url(r'^info', articleapp.views.info, name='info'),
     url(r'^edits', accountapp.views.edits, name='edits'),
+    url(r'^chathome', chatbotapp.views.chathome, name='chathome'),
     url(r'^announce', accountapp.views.announce, name='announce'),
     url(r'^homepage', articleapp.views.homepage, name='homepage'),
-
-    url('^', include('django.contrib.auth.urls')),
 
     path('password_reset/', auth_views.PasswordResetView.as_view(), name='password_reset'),
     path('password_reset/done/', auth_views.PasswordResetDoneView.as_view(), name='password_reset_done'),
     path('password_reset/confirm/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(),name='password_reset_confirm'),
     path('password_reset/complete/', auth_views.PasswordResetCompleteView.as_view(),name='password_reset_complete'),
+
+    path("accounts/", include("allauth.urls")),
+
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

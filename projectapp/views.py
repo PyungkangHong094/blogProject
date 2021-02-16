@@ -34,7 +34,7 @@ class ProjectDetailView(DetailView, MultipleObjectMixin):
     model = Project
     context_object_name = 'target_project'
     template_name = 'projectapp/detail.html'
-
+    ordering = ['-id']
     paginate_by = 10
 
     def get_context_data(self, **kwargs):

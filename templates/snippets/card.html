@@ -1,6 +1,7 @@
 
-
-
-    <div>
-      <img src="{{ article.image.url }}" alt="" value="  ">
+    <div  style="position: relative;font-size: 10px;">
+        <p class="shadow" style="border-radius: 0.8rem; text-align:center; width: 450px; bottom: 140px; font-size: 1.8em; font-weight: bold; ">
+          <img src="{{ article.image.url }}" alt="" value=" ">
+                {{ article.title | truncatechars:8 }}
+        </p>
     </div>

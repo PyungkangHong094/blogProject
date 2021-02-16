@@ -57,11 +57,12 @@
 
 </style>
 
-    <div class="addthis_inline_share_toolbox_b2qf"></div>
+
     <br>
     {% if article_list %}
     <div class="container">
       {% for article in article_list %}
+
       <a class="effect effect-4" href="{% url 'articleapp:detail' pk=article.pk %}"
          title="Learn More" >
 
