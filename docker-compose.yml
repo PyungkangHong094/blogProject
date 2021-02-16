@@ -11,7 +11,7 @@ services:
     ports:
       - 80:80
   cubelink:
-    image: django_image_cube:20
+    image: django_image_cube:21
     networks:
       - network
     volumes:
