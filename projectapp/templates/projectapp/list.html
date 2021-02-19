@@ -24,7 +24,7 @@
 </style>
 
     {% if project_list %}
-    <div class="container" style="font-family: 'GmarketSansMedium';">
+    <div class="container" style="font-family: 'NeoDunggeunmo';">
       {% for project in project_list %}
       <a href="{% url 'projectapp:detail' pk=project.pk %}">
         {% include 'snippets/card_project.html' with project=project %}
@@ -40,7 +40,7 @@
 
     {% include 'snippets/pagination.html' with page_obj=page_obj %}
 
-    <div style="text-align: center; font-family: 'GmarketSansMedium';">
+    <div style="text-align: center; font-family: 'NeoDunggeunmo';">
       <a href="{% url 'projectapp:create' %}" class="btn btn-outline-dark rounded-pill mt-3 mb-3 px-3">
         새로운 프로젝트 개설
       </a>
