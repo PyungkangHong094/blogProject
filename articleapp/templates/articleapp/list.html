@@ -61,6 +61,28 @@
     <br>
     {% if article_list %}
     <div class="container">
+      <div class="img_masonry" style="position: absolute; transform: translate(12px, 0px);">
+        <a href="/homepage">
+                <div style="display: inline-block; position: absolute; top: 1rem; left: 1rem; width: 2rem; height: 2rem;
+                    border-radius: 10rem; box-shadow: 0 0 3px #dd1144; background-color: white;" class="text-center">
+            <i class="material-icons" style="font-size: 1.5rem !important; margin: .25rem 0; transform: rotate(-45deg); color: #de5e5e;">
+                push_pin
+            </i>
+        </div>
+        <div>
+          <img src="http://www.cubelink.ga/media/article/game.PNG">
+            
+          <div class="shadow"></div>
+        </div>
+        </a>
+        <!-- <span style="vertical-align: bottom" class="fav_comment_count">
+            <i style="color: #ff6e6e;" class="material-icons">favorite</i>
+            <p></p>
+            <i style="color: #6a6a6a;" class="material-icons">comment</i>
+            <p></p>
+        </span> -->
+      </div>
+
       {% for article in article_list %}
 
       <a class="effect effect-4" href="{% url 'articleapp:detail' pk=article.pk %}"
@@ -70,6 +92,8 @@
           <p class="img_text_only">{{ article_list.title }}</p>
       </a>
       {% endfor %}
+
+      
         <div class="article_banner">
             <ins class="kakao_ad_area" style="display:none;"
              data-ad-unit    = "DAN-7KAPNpdeFRehw0Df"
@@ -77,6 +101,10 @@
              data-ad-height  = "250">
             </ins>
         </div>
+
+        
+      </div>
+
     </div>
     <script src="{% static 'js/magicgrid.js' %}"></script>
     {% else %}

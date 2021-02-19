@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'chatbotapp',
 
     # Required apps for allauth:
-
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -84,10 +83,12 @@ TEMPLATES = [
 NAVER_CLIENT_ID = 'qJXZyvWKxnrCVrPtLdEf'
 NAVER_SECRET_KEY = 'TQV5pyfxdr'
 
-AUTHENTICATION_BACKENDS =(
-    "django.contrib.auth.backends.ModelBackend",
-    "allauth.account.auth_backends.AuthenticationBackend",
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
 )
+
 
 
 WSGI_APPLICATION = 'pragmatic.wsgi.application'
@@ -160,3 +161,15 @@ EMAIL_HOST_PASSWORD = 'cubelink2021'
 
 
 #로그인5회 이상 틀리면 방지문자
+
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        }
+    }
+}
