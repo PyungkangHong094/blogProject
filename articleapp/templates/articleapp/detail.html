@@ -10,6 +10,19 @@
             </h1>
             <h6 style="color:lightgray"> {{ target_article.created_at }} </h6>
 
+            <!--   ========= 좋아요 ==========    -->
+            <div style="height: 3rem ;">
+                <a href="#">
+                    <i style="vertical-align: middle; font-size: 1.2rem; color: #f77" class="material-icons">
+                        favorite
+                    </i>
+                </a>
+                <span style="vertical-align: middle; font-size: 1.2rem;">
+                    {{ target_article.like }}
+                </span>
+            </div>
+
+            <!--   ========= 작성자 닉네임 ==========    -->
             <div style="text-align: center; box-shadow: #d4d4d4 0px 0px 9px; border-radius: 10rem;
             display: inline-block;">
                 <h4 style="text-align: center; vertical-align: middle; display: inline-block;
@@ -26,6 +39,7 @@
                 </h4>
             </div>
 
+            <!--   ========= 프로젝트 링크 ==========     -->
             {% if target_article.project %}
             <div style="text-align: center; box-shadow: #d4d4d4 0px 0px 9px; border-radius: 10rem;
                 display: inline-block;">
@@ -38,6 +52,8 @@
                 </h4>
             </div>
             {% endif %}
+
+
             <hr>
             <img style="width: 100%; border-radius: 1rem; margin: 2rem 0;"
                     src="{{ target_article.image.url }}" alt="">
