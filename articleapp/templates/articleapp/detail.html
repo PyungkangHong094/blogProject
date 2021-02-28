@@ -12,7 +12,7 @@
 
             <!--   ========= 좋아요 ==========    -->
             <div style="height: 3rem ;">
-                <a href="#">
+                <a href="{% url 'likeapp:article_like' pk=target_article.pk %}">
                     <i style="vertical-align: middle; font-size: 1.2rem; color: #f77" class="material-icons">
                         favorite
                     </i>
