@@ -12,5 +12,3 @@ class LikeRecord(models.Model):
     # 좋아요는 하나만
     class Meta:
         unique_together = ('user', 'article')
-
-    
