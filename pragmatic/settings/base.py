@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'commentapp',
     'projectapp',
     'subscribeapp',
+    'likeapp',
     'chatbotapp',
 
     # Required apps for allauth:

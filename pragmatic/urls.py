@@ -37,6 +37,7 @@ urlpatterns = [
     path('comments/', include('commentapp.urls')),
     path('projects/', include('projectapp.urls')),
     path('subscribe/', include('subscribeapp.urls')),
+    path('likes/', include('likeapp.urls')),
     path('chatbotapp/', include('chatbotapp.urls')),
     url(r'^info', articleapp.views.info, name='info'),
     url(r'^edits', accountapp.views.edits, name='edits'),
