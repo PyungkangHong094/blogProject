@@ -9,31 +9,31 @@
 
         <ul class="navbar_menu"> 
             <li><a href="{% url 'articleapp:list' %}" class="pragmatic_header_nav">VIEW</a></li>
-            <li><a href="{% url 'projectapp:list' %}" class="pragmatic_header_nav" style="font-family: 'NeoDunggeunmo';">큐브링크</a></li>
+            <li><a href="{% url 'projectapp:list' %}" class="pragmatic_header_nav" style="font-family: 'NEXON Lv1 Gothic OTF';">큐브링크</a></li>
             {% if not user.is_authenticated %}
             <li>
-                <a href="{% url 'accountapp:login' %}?next={{ request.path }}" class="pragmatic_header_nav" style="font-family: 'NeoDunggeunmo';">
+                <a href="{% url 'accountapp:login' %}?next={{ request.path }}" class="pragmatic_header_nav" style="font-family: 'NEXON Lv1 Gothic OTF';">
                     로그인
                 </a>
             </li>
             <li>
-                <a href="{% url 'accountapp:create' %}" class="pragmatic_header_nav" style="font-family: 'NeoDunggeunmo';">
+                <a href="{% url 'accountapp:create' %}" class="pragmatic_header_nav" style="font-family: 'NEXON Lv1 Gothic OTF';">
                     회원가입
                 </a>
             </li>
             {% else %}
             <li>
-                <a href="{% url 'subscribeapp:list' %}" class="pragmatic_header_nav" style="font-family: 'NeoDunggeunmo';">
+                <a href="{% url 'subscribeapp:list' %}" class="pragmatic_header_nav" style="font-family: 'NEXON Lv1 Gothic OTF';">
                     구독
                 </a>
             </li>
             <li>
-                <a href="{% url 'accountapp:detail' pk=user.pk %}" class="pragmatic_header_nav" style="font-family: 'NeoDunggeunmo';">
+                <a href="{% url 'accountapp:detail' pk=user.pk %}" class="pragmatic_header_nav" style="font-family: 'NEXON Lv1 Gothic OTF';">
                     마이프로필
                 </a>
             </li>
             <li>
-                <a href="{% url 'accountapp:logout' %}?next={{ request.path }}" class="pragmatic_header_nav" style="font-family: 'NeoDunggeunmo';">
+                <a href="{% url 'accountapp:logout' %}?next={{ request.path }}" class="pragmatic_header_nav" style="font-family: 'NEXON Lv1 Gothic OTF';">
                     로그아웃
                 </a>
             </li>
