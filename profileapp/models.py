@@ -10,6 +10,9 @@ class Profile(models.Model):
     nickname = models.CharField(max_length=20, unique=True, null=True)
     message = models.CharField(max_length=100, null=True)
 
+    class Meta:
+        managed = False
+        verbose_name = '프로파일'
 
     def __str__(self):
         return f'{self.pk} : {self.user}'

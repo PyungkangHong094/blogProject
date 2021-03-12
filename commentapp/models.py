@@ -13,5 +13,10 @@ class Comment(models.Model):
 
     created_at = models.DateTimeField(auto_now=True)
 
-    def __str__(self):
-        return f'{self.pk} : {self.writer},{self.article}'
+
+    class Meta:
+        managed = False
+        verbose_name = '댓글'
+
+    # def __str__(self):
+    #     return f'{self.pk} : {self.writer},{self.article}'
