@@ -1,0 +1,18 @@
+{% extends 'admin/base.html' %}
+{% load static %}
+
+{% block title %} | {{ site_title|default:_('Django site admin') }} {% endblock %}
+
+{% block branding %}
+<head>
+    <meta charset="UTF-8">
+    <title>Cuble Link Back Office</title>
+</head>
+
+<h1>
+    <a href="{% url 'admin:index' %}">
+        <img src="{% static 'images/"
+    </a>
+
+</h1>
+{% endblock %}

@@ -29,6 +29,7 @@ from django.contrib.auth import views as auth_views
 
 
 urlpatterns = [
+    # path('grappelli/', include('grappelli.urls')),
     path('', ArticleListView.as_view(), name='home'),
     path('admin/', admin.site.urls),
     path('accounts/', include('accountapp.urls')),

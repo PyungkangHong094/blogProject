@@ -1,0 +1,170 @@
+@font-face {
+    font-family: 'NEXON Lv1 Gothic OTF';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --text-color: #000000;
+    --background-color: #ccccc;
+    --accent-color: #d49466;
+}
+
+.pragmatic_header_navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--background-color);
+    padding: 8px 12px;
+    color: var(--text-color);
+}
+.pragmatic_header {
+    position: relative;
+    margin: 1rem 0;
+    padding: 20px;
+}
+.pragmatic_logo {
+    color: var(--text-color);
+    padding: 8px 12px;
+    font-size: 26px;
+    font-family: 'Orbitron', sans-serif;
+}
+.pragmatic_logo i {
+    color: var(--accent-color);
+}
+.pragmatic_header_nav {
+    font-family: 'Lexend Mega', sans-serif;
+}
+.navbar_menu {
+    display: flex;
+    list-style: none;
+}
+.navbar_menu li {
+    padding: 8px 12px;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+li.icon {
+    flex-basis: 25%;
+}
+
+.pragmatic_footer_button {
+    font-size: 0.9rem;
+}
+.pragmatic_footer {
+    text-align: center;
+    margin-top: 2rem;
+}
+.navbar_toogleBtn {
+    display: none;
+    position: absolute;
+    right: 32px;
+    font-size: 24px;
+    color: var(--text-color);
+}
+
+@media screen and (max-width: 917px) {
+    .pragmatic_header_navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 25px;
+    }
+    .navbar_menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .navbar_menu li {
+        width: 100%;
+        text-align: center;
+    }
+    .navbar_icon {
+        display: none;
+        justify-content: center;
+        width: 100%;
+    }
+    .navbar_toogleBtn {
+        display: block;
+    }
+    html {
+        font-size: 13px;
+    }
+    .navbar_menu.active,
+    .navbar_icon.active {
+        display: flex;
+    }
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: lightgray;
+    text-decoration: none;
+}
+
+.pragmatic_header_nav {
+    margin: 1rem 0.5rem;
+    font-family: 'Lexend Mega', sans-serif;
+}
+
+.container .item1 {
+    height: 300px;
+}
+
+.ad_banner {
+    width: 320px;
+    margin: 0 auto;
+}
+
+.addthis_inline_share_toolbox {
+    text-align: right;
+}
+.addthis_inline_share_toolbox_b2qf {
+    text-align: center;
+}
+
+head,
+body {
+    background-color: white;
+}
+
+.card {
+    cursor: pointer;
+}
+
+.hd {
+    font-size: 25px;
+    font-weight: 550;
+}
+
+.card.hover,
+.card:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.img {
+    margin-bottom: 35px;
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222);
+}
+
+.card-title {
+    font-weight: 600;
+}
+
+button.focus,
+button:focus {
+    outline: 0;
+    box-shadow: none !important;
+}

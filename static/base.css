@@ -26,8 +26,8 @@
 }
 .pragmatic_logo {
     color: var(--text-color);
-    padding: 8px 12px;
-    font-size: 26px;
+    padding: 1px 48px;
+    font-size: 32px;
     font-family: 'Orbitron', sans-serif;
 }
 .pragmatic_logo i {
