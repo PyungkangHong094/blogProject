@@ -12,9 +12,9 @@ class Project(models.Model):
 
     created_at = models.DateTimeField(auto_now_add=True, null=True)
 
-    class Meta:
-        managed = False
-        verbose_name = '프로젝트'
+    # class Meta:
+    #     managed = False
+    #     verbose_name = '프로젝트'
 
-    # def __str__(self):
-    #     return f' {self.title}'
+    def __str__(self):
+        return f' {self.title}'
