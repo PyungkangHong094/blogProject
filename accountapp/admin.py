@@ -1,5 +1,6 @@
 from django.contrib import admin
 from rangefilter.filter import DateRangeFilter, DateTimeRangeFilter
+from django.utils.safestring import mark_safe
 
 # Register your models here.
 # from accountapp.models import Acount
@@ -25,6 +26,13 @@ class DisplayArticle(admin.ModelAdmin):
     # 삭제를 못하게 하는거
     def has_delete_permission(self, request, obj=None):
         return False
+
+    def get_image(self, obj):
+        return mark_safe('<img src="{ url }" width="{ width }" height={ height } />'.format(
+            url=obj.image.url,
+            width=200,
+            height=200,
+        ))
 
 
 admin.site.register(Article, DisplayArticle)

@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.conf import settings
 from django.conf.urls import url
-from django.conf.urls.static import static #이미지를 가져오려면conf url를 가져와야함
+from django.conf.urls.static import static  # 이미지를 가져오려면conf url를 가져와야함
 from django.contrib import admin
 from django.urls import path, include
+import adminactions.actions as actions  # graph
 
 import accountapp
 import articleapp
@@ -30,6 +31,8 @@ from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     # path('grappelli/', include('grappelli.urls')),
+    path('adminactions/', include('adminactions.urls')), # graph
+
     path('', ArticleListView.as_view(), name='home'),
     path('admin/', admin.site.urls),
     path('accounts/', include('accountapp.urls')),
@@ -55,3 +58,6 @@ urlpatterns = [
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+actions.add_to_site(admin.site)

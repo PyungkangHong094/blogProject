@@ -28,6 +28,7 @@ ALLOWED_HOSTS = ['158.247.223.218', '127.0.0.1', '.cubelink.ga']
 INSTALLED_APPS = [
     # 'grappelli',
 
+    'adminactions',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.sites',
@@ -144,8 +145,8 @@ GRAPPELLI_ADMIN_TITLE = 'CubeLink Back Office'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+#Static
 STATIC_URL = '/static/'
-
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_DIRS = [
@@ -155,9 +156,8 @@ STATICFILES_DIRS = [
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = reverse_lazy('home')
 
-
+# Media
 MEDIA_URL = '/media/'
-
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
