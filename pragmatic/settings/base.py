@@ -29,6 +29,8 @@ INSTALLED_APPS = [
     # 'grappelli',
 
     'adminactions',
+    'django_admin_env_notice', #admin 위에다 노티스
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.sites',
@@ -48,7 +50,7 @@ INSTALLED_APPS = [
     'chatbotapp',
 
     'rangefilter',
-
+    'admin_honeypot',
     # Required apps for allauth:
     'allauth',
     'allauth.account',
@@ -88,6 +90,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django_admin_env_notice.context_processors.from_settings'  # notice admin
             ],
         },
     },
@@ -140,7 +143,7 @@ USE_L10N = True
 USE_TZ = True
 
 # Django admin
-GRAPPELLI_ADMIN_TITLE = 'CubeLink Back Office'
+# GRAPPELLI_ADMIN_TITLE = 'CubeLink Back Office'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/

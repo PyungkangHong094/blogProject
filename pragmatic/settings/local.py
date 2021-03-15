@@ -1,6 +1,10 @@
 from .base import *
 
 
+ENVIRONMENT_NAME = "로컬 서버입니다"
+ENVIRONMENT_COLOR = "#FF2222"
+
+
 env = environ.Env(
 
     # set casting, default value
@@ -23,7 +27,6 @@ SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
 
 
 # Database

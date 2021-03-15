@@ -35,6 +35,7 @@ urlpatterns = [
 
     path('', ArticleListView.as_view(), name='home'),
     path('admin/', admin.site.urls),
+    path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
     path('accounts/', include('accountapp.urls')),
     path('profiles/', include('profileapp.urls')),
     path('articles/', include('articleapp.urls')),
