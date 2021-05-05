@@ -8,7 +8,7 @@
 
 .container {
     padding: 0;
-    margin: 0, auto;
+    margin: 0 auto;
 
 }
 .container a {
@@ -61,17 +61,17 @@
     <br>
     {% if article_list %}
     <div class="container">
-      <div class="img_masonry" style="position: absolute; transform: translate(10px, 0px);">
-        <a href="/homepage">
-            <img src="http://www.cubelink.ga/media/article/game.PNG">
-            <div style="display: inline-block; position: absolute; top: 1rem; left: 1rem; width: 2rem; height: 2rem;
-                    border-radius: 10rem; box-shadow: 0 0 3px #dd1144; background-color: white;" class="text-center">
-                <i class="material-icons" style="font-size: 1.5rem !important; margin: .25rem 0; transform: rotate(-45deg); color: #de5e5e;">
-                    push_pin
-                </i>
-            </div>
-        </a>
-      </div>
+<!--      <div class="img_masonry" style="position: absolute; transform: translate(10px, 0px);">-->
+<!--        <a href="/homepage">-->
+<!--            <img src="http://www.cubelink.ga/media/article/game.PNG">-->
+<!--            <div style="display: inline-block; position: absolute; top: 1rem; left: 1rem; width: 2rem; height: 2rem;-->
+<!--                    border-radius: 10rem; box-shadow: 0 0 3px #dd1144; background-color: white;" class="text-center">-->
+<!--                <i class="material-icons" style="font-size: 1.5rem !important; margin: .25rem 0; transform: rotate(-45deg); color: #de5e5e;">-->
+<!--                    push_pin-->
+<!--                </i>-->
+<!--            </div>-->
+<!--        </a>-->
+<!--      </div>-->
 
       {% for article in article_list %}
       <a class="effect effect-4" href="{% url 'articleapp:detail' pk=article.pk %}"

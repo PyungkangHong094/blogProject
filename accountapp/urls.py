@@ -1,6 +1,5 @@
 from django.conf.urls import url
-from django.contrib.auth.views import LoginView, LogoutView, PasswordResetView, PasswordResetDoneView, \
-    PasswordResetConfirmView, PasswordResetCompleteView
+from django.contrib.auth.views import LoginView, LogoutView
 
 from accountapp.forms import UserLoginForm
 from accountapp.views import AccountCreateView, AccountDetailView, AccountUpdateView, AccountDeleteView
