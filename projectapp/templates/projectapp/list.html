@@ -23,7 +23,23 @@
     }
 </style>
 
+
     {% if project_list %}
+    <div class="mt-2" style="display: block; text-align: center; justify-content: center; align-items: center; border-radius: 1rem; font-family: 'NEXON Lv1 Gothic OTF';">
+        <a href="{% url 'homepage' %}" class="btn btn-dark rounded-pill mt-3 mb-3 px-3">
+        간단한 게임
+        </a>
+        <a href="#" class="btn btn-danger rounded-pill mt-3 mb-3 px-3">
+        와인 테스트
+        </a>
+        <a href="https://woulduin.com" class="btn btn-warning rounded-pill mt-3 mb-3 px-3">
+        우주인코인
+        </a>
+        <a href="https://cubeyearfun.netlify.app/" class="btn btn-info rounded-pill mt-3 mb-3 px-3">
+        신년운세
+        </a>
+    </div>
+
     <div class="container" style="font-family: 'NEXON Lv1 Gothic OTF';">
       {% for project in project_list %}
       <a href="{% url 'projectapp:detail' pk=project.pk %}">
