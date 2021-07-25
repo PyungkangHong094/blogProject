@@ -1,0 +1,63 @@
+{% load static %}
+{% include 'head.html' %}
+<script>
+    // 기본 위치(top)값
+    let floatPosition = parseInt($(".sideBanner").css('top'))
+
+    // scroll 인식
+    $(window).scroll(function() {
+
+        // 현재 스크롤 위치
+        var currentTop = $(window).scrollTop();
+        var bannerTop = currentTop + floatPosition + "px";
+
+        //이동 애니메이션
+        $(".sideBanner").stop().animate({
+          "top" : bannerTop
+        }, 500);
+
+    }).scroll();
+</script>
+
+<style>
+    .hidden{
+        display: none;
+    }
+    body { height: 1000px; }
+
+.sideBanner {
+    position: absolute;
+    width: 210px;
+    height: 500px;
+    right: 50px;
+    top: 120px;
+    background-color: #ffe5e5;
+    color: #000000;
+    .li {
+
+    }
+}
+</style>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.js"></script>
+<body>
+  <div style="border-radius: 0.8rem;" class="sideBanner">
+      <span class="txt-label">
+        <br>
+        <!-- 시계  -->
+        <h2 style="text-align: center" id="clock" >00:00</h2>
+        <h1 id="greeting" class="hidden"></h1>
+
+      </span>
+
+      <!-- 투두 타이핑 -->
+      <form style="text-align: center" id="todo-form">
+            <input class="form-control" required type="text" placeholder="할일 메모!" />
+      </form>
+      <!-- 투두 리스트  -->
+      <li class="list-group-item list-group-item-light" style="text-align: center" id="todo-list">ex) 포토올리기     </li>
+  </div>
+</body>
+
+<script src="{% static 'js/clock.js' %}"></script>
+<script src="{% static 'js/todo.js' %}"></script>
